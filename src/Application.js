@@ -14,7 +14,7 @@ var Application = React.createClass({
     fetch() {
         console.info('Application.fetch');
         //jsonp('http://www.google.com/finance/info?infotype=infoquoteall&q=LSE:TSCO,LSE:MKS,NASDAQ:GOOG,LSE:MTC', null, (err, data) => {
-        jsonp('http://www.google.com/finance/info?q=LSE:TSCO,LSE:MKS,NASDAQ:GOOG,LSE:MTC', null, (err, data) => {
+        jsonp('http://www.google.com/finance/info?q=LON:ISF,LON:EMG,LON:LMI,LON:BRWM,LON:SSE,LON:MTC,LON:RDSA,NASDAQ:AAPL,LON:BLT,LON:TSCO,LON:MKS,tranLON:ULVR,LON:GSK,LON:RB,LON:JII,LON:TEM', null, (err, data) => {
             if (err) {
                 console.error(error.message);
             } else {
