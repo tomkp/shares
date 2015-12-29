@@ -1,0 +1,78 @@
+
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  position: relative;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5rem;
+  width: 100%;
+}
+
+
+#application {
+  width: 100%;
+  height: 100%;
+}
+
+
+.quotes {
+  width: 100%;
+  height: 100%;
+
+  //list-style: none;
+  //padding: 0;
+  //margin: 0;
+  //display: flex;
+  //flex-direction: column;
+}
+
+.quote {
+  //flex: 1;
+  font-size: 8vmin;
+  //line-height: 8vmin;
+  //vertical-align: middle;
+  //border-bottom: 1px solid #ddd;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+td {
+  padding-left: 1rem;
+  &:last-child {
+    padding-right: 1rem;
+  }
+}
+
+.exchange-ticker {
+
+}
+
+.exchange {
+  &:after {
+    content: ":";
+  }
+}
+.ticker {
+
+}
+.latest {
+  text-align: right;
+}
