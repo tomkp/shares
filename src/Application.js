@@ -30,15 +30,12 @@ var Application = React.createClass({
                 }
             })
             .then((response) => {
-                const quotes = response.data.query.results.quote;
-                console.info('quotes:', quotes);
-                this.setState({quotes: quotes});
+                this.setState({quotes: response.data.query.results.quote});
                 setTimeout(() => this.fetch(), 60000);
             })
             .catch((response) => {
                 console.error(response);
             });
-
     },
 
     getInitialState() {
