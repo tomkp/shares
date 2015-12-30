@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Quote from './Quote';
+import percent from './Percent';
+
 
 export default ({ quotes }) => (
     <table className="quotes">
@@ -9,9 +11,7 @@ export default ({ quotes }) => (
             quotes
                 .filter((quote) => quote.Open)
                 .sort((a, b)=> {
-                    const aPercentChange = a.PercentChange.substr(0, a.PercentChange.length -1);
-                    const bPercentChange = b.PercentChange.substr(0, b.PercentChange.length -1);
-                    return bPercentChange - aPercentChange;
+                    return percent(b.PercentChange) - percent(a.PercentChange);
                 })
                 .map((quote) => {
                     return <Quote quote={quote} key={quote.Symbol} />
