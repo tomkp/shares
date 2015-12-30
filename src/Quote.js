@@ -20,7 +20,7 @@ export default React.createClass({
                 <td className="name">{quote.Name}</td>
                 <td className="change">{Number(quote.Change).toFixed(2)}</td>
                 <td className="percent-change">{percentage.toFixed(2)}%</td>
-                <td className="latest">{quote.LastTradePriceOnly}</td>
+                <td className="latest">{Number(quote.LastTradePriceOnly).toFixed(2)}</td>
             </tr>
         );
     }
