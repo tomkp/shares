@@ -20,9 +20,11 @@ var Application = React.createClass({
 
     fetch() {
         console.info('Application.fetch');
+        const symbols = ["ISF.L","EMG.L","LMI.L","BRWM.L","SSE.L","MTC.L","RDSA.L","BLT.L","TSCO.L","MKS.L","ULVR.L","GSK.L","RB.L","JII.L","TEM.L", "AAPL"];
+        const symbolStr = symbols.map((s) => `"${s}"` ).join(',');
         axios.get('http://query.yahooapis.com/v1/public/yql', {
                 params: {
-                    q: 'select * from yahoo.finance.quotes where symbol in ("ISF.L","EMG.L","LMI.L","BRWM.L","SSE.L","MTC.L","RDSA.L","BLT.L","TSCO.L","MKS.L","ULVR.L","GSK.L","RB.L","JII.L","TEM.L", "AAPL")',
+                    q: `select * from yahoo.finance.quotes where symbol in ('${symbolStr}')`,
                     format: 'json',
                     env: 'store://datatables.org/alltableswithkeys'
                 }

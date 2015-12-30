@@ -10,13 +10,9 @@ export default ({ quotes }) => (
         {
             quotes
                 .filter((quote) => quote.Open)
-                .sort((a, b)=> {
-                    return percent(b.PercentChange) - percent(a.PercentChange);
-                })
-                .map((quote) => {
-                    return <Quote quote={quote} key={quote.Symbol} />
-                })
-            }
+                .sort((a, b)=> percent(b.PercentChange) - percent(a.PercentChange))
+                .map((quote) => <Quote quote={quote} key={quote.Symbol} />)
+        }
         </tbody>
     </table>
 );
