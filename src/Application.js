@@ -7,35 +7,23 @@ import '../less/Application.less';
 import jsonp from 'jsonp';
 
 import Quotes from './Quotes';
-//import lookup from './Lookup';
+import lookup from './Lookup';
 
 
 import axios from 'axios';
 
 
-
+const symbols = ["ISF.L", "EMG.L", "LMI.L", "BRWM.L", "SSE.L", "MTC.L", "RDSA.L", "BLT.L", "TSCO.L", "MKS.L", "ULVR.L", "GSK.L", "RB.L", "JII.L", "TEM.L", "AAPL"];
 
 
 var Application = React.createClass({
 
     fetch() {
         console.info('Application.fetch');
-        const symbols = ["ISF.L","EMG.L","LMI.L","BRWM.L","SSE.L","MTC.L","RDSA.L","BLT.L","TSCO.L","MKS.L","ULVR.L","GSK.L","RB.L","JII.L","TEM.L", "AAPL"];
-        const symbolStr = symbols.map((s) => `"${s}"` ).join(',');
-        axios.get('http://query.yahooapis.com/v1/public/yql', {
-                params: {
-                    q: `select * from yahoo.finance.quotes where symbol in ('${symbolStr}')`,
-                    format: 'json',
-                    env: 'store://datatables.org/alltableswithkeys'
-                }
-            })
-            .then((response) => {
-                this.setState({quotes: response.data.query.results.quote});
-                setTimeout(() => this.fetch(), 60000);
-            })
-            .catch((response) => {
-                console.error(response);
-            });
+        lookup(symbols, (quotes) => {
+            this.setState({quotes: quotes});
+            setTimeout(() => this.fetch(), 60000);
+        })
     },
 
     getInitialState() {
