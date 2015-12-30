@@ -25,7 +25,14 @@ module.exports = {
             {
                 test: /\.less$/,
                 loader: "style!css!autoprefixer!less"
-            }
+            },
+            { test: /\.json$/, loader: 'json-loader' }
         ]
+    },
+    node: {
+        console: true,
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty'
     }
 };

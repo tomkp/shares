@@ -6,9 +6,11 @@ export default ({ quotes }) => (
     <table className="quotes">
         <tbody>
         {quotes.sort((a, b)=> {
-            return b.cp - a.cp;
+            const aPercentChange = a.PercentChange.substr(0, a.PercentChange.length -1);
+            const bPercentChange = b.PercentChange.substr(0, b.PercentChange.length -1);
+            return bPercentChange - aPercentChange;
         }).map((quote) => {
-            return <Quote quote={quote} key={quote.id} />
+            return <Quote quote={quote} key={quote.Symbol} />
         })}
         </tbody>
     </table>

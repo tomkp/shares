@@ -6,7 +6,7 @@ export default React.createClass({
     render() {
         const quote = this.props.quote;
         let col = '#eee';
-        const percent = quote.cp;
+        const percent = quote.PercentChange.substr(0, quote.PercentChange.length -1);
         if (percent > 0) col = fraction(percent / 10, "#eeffee", "#00ff00");
         else if (percent < 0) col = fraction(-percent / 10, "#ffeeee", "#ff0000");
         const style = {
@@ -15,13 +15,11 @@ export default React.createClass({
 
         return (
             <tr className="quote" style={style}>
-                <td className="exchange-ticker">
-                    <span className="exchange">{quote.e}</span>
-                    <span className="ticker">{quote.t}</span>
-                </td>
-                <td className="c">{quote.c}</td>
-                <td className="cp">{quote.cp}%</td>
-                <td className="latest">{quote.l}</td>
+                <td className="symbol">{quote.Symbol}</td>
+                <td className="name">{quote.Name}</td>
+                <td className="change">{quote.Change}</td>
+                <td className="percent-change">{quote.PercentChange}</td>
+                <td className="latest">{quote.LastTradePriceOnly}</td>
             </tr>
         );
     }
