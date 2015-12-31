@@ -4,13 +4,8 @@ import { Router, Route, Link } from 'react-router'
 
 import '../less/Application.less';
 
-import jsonp from 'jsonp';
-
 import Quotes from './Quotes';
-import lookup from './Lookup';
-
-
-import axios from 'axios';
+import fetchQuotes from './FetchQuotes';
 
 
 const symbols = ["ISF.L", "EMG.L", "LMI.L", "BRWM.L", "SSE.L", "MTC.L", "RDSA.L", "BLT.L", "TSCO.L", "MKS.L", "ULVR.L", "GSK.L", "RB.L", "JII.L", "TEM.L", "AAPL"];
@@ -20,7 +15,7 @@ var Application = React.createClass({
 
     fetch() {
         console.info('Application.fetch');
-        lookup(symbols).then((quotes) => {
+        fetchQuotes(symbols).then((quotes) => {
             this.setState({quotes: quotes});
             setTimeout(() => this.fetch(), 60000);
         })
