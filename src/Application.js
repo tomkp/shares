@@ -15,13 +15,14 @@ var Application = React.createClass({
 
     fetch() {
         console.info('Application.fetch');
-        fetchQuotes(symbols).then((quotes) => {
-            this.setState({quotes: quotes});
-            setTimeout(() => this.fetch(), 60000);
-        })
-        .catch((response) => {
-            console.error(response);
-        });
+        fetchQuotes(symbols)
+            .then((quotes) => {
+                this.setState({quotes: quotes});
+                setTimeout(() => this.fetch(), 60000);
+            })
+            .catch((response) => {
+                console.error(response);
+            });
     },
 
     getInitialState() {
