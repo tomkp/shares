@@ -6,9 +6,11 @@ import '../less/Application.less';
 
 import Quotes from './Quotes';
 import fetchQuotes from './FetchQuotes';
+import fetchHistorical from './FetchHistorical';
 
 
 const symbols = ["ISF.L", "EMG.L", "LMI.L", "BRWM.L", "SSE.L", "MTC.L", "RDSA.L", "BLT.L", "TSCO.L", "MKS.L", "ULVR.L", "GSK.L", "RB.L", "JII.L", "TEM.L", "AAPL"];
+//const symbols = ["ISF.L", "EMG.L", "LMI.L"];
 
 
 var Application = React.createClass({
