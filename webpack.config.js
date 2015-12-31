@@ -8,7 +8,7 @@ module.exports = {
     ],
     output: {
         path: __dirname,
-        filename: 'dist/webpacked.js'
+        filename: 'app/dist/webpacked.js'
     },
     debug: true,
     devtool: 'source-map',
