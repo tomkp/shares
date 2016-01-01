@@ -5,7 +5,8 @@ import { Router, Route, Link } from 'react-router'
 import '../less/Application.less';
 
 import Quotes from './Quotes';
-import fetchQuotes from './FetchQuotes';
+//import fetchQuotes from './FetchQuotes';
+import fetchQuotes from 'yahoo-finance-quotes';
 import fetchHistorical from './FetchHistorical';
 
 
