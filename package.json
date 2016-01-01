@@ -7,13 +7,15 @@
     "axios": "^0.8.1",
     "babel-polyfill": "^6.3.14",
     "electron": "^0.4.1",
+    "hex-rgb": "^1.0.0",
     "history": "^1.17.0",
     "jsonp": "^0.2.0",
     "moment": "^2.10.6",
     "react": "^0.14.5",
     "react-dom": "^0.14.5",
     "react-router": "^1.0.2",
-    "yahoo-finance-quotes": "^1.0.2"
+    "rgb-hex": "^1.0.0",
+    "yahoo-finance-quotes": "^1.0.3"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.1.0",

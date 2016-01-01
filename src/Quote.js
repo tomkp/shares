@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {fraction} from './Colors';
+import fraction from './Colors';
 import percent from './Percent';
 
 export default React.createClass({
@@ -8,10 +8,10 @@ export default React.createClass({
         const quote = this.props.quote;
         const percentage = percent(quote.PercentChange);
         let col = '#eee';
-        if (percentage > 0) col = fraction(percentage / 10, '#eeffee', '#00ff00');
-        else if (percentage < 0) col = fraction(-percentage / 10, '#ffeeee', '#ff0000');
+        if (percentage > 0) col = fraction(percentage / 10, 'eeffee', '00ff00');
+        else if (percentage < 0) col = fraction(-percentage / 10, 'ffeeee', 'ff0000');
         const style = {
-            background: col
+            background: '#' + col
         };
 
         return (
