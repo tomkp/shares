@@ -5,7 +5,6 @@ import { Router, Route, Link } from 'react-router'
 import '../less/Application.less';
 
 import Quotes from './Quotes';
-//import fetchQuotes from './FetchQuotes';
 import fetchQuotes from 'yahoo-finance-quotes';
 import fetchHistorical from './FetchHistorical';
 
@@ -36,7 +35,7 @@ var Application = React.createClass({
     },
 
     componentDidMount() {
-        //console.info('Application.componentDidMount', this.props);
+        console.info('Application.componentDidMount', this.props);
         const symbolsX = this.props.location.query.symbols;
         //console.info('', symbolsX);
         this.fetch();
