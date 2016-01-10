@@ -35,7 +35,7 @@
   },
   "scripts": {
     "pack": "webpack --progress --colors --watch",
-    "deploy": "surge app"
+    "deploy": "surge app statae.com"
   },
   "babel": {
     "presets": [
