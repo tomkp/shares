@@ -35,7 +35,7 @@
   },
   "scripts": {
     "pack": "webpack --progress --colors --watch",
-    "deploy": "surge app shares.surge.sh"
+    "deploy": "surge app"
   },
   "babel": {
     "presets": [
