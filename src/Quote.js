@@ -18,9 +18,9 @@ export default React.createClass({
             <tr className="quote" style={style}>
                 <td className="symbol">{quote.Symbol}</td>
                 <td className="name">{quote.Name}</td>
+                <td className="latest">{Number(quote.LastTradePriceOnly).toFixed(2)}</td>
                 <td className="change">{Number(quote.Change).toFixed(2)}</td>
                 <td className="percent-change">{percentage.toFixed(2)}%</td>
-                <td className="latest">{Number(quote.LastTradePriceOnly).toFixed(2)}</td>
             </tr>
         );
     }

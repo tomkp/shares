@@ -10,9 +10,9 @@ export default ({ quotes }) => (
             <tr>
                 <th> </th>
                 <th> </th>
-                <th className="change">Change</th>
-                <th className="percent-change">% Change</th>
                 <th className="latest">Latest</th>
+                <th className="change">+/-</th>
+                <th className="percent-change">+/- %</th>
             </tr>
         </thead>
         <tbody>
