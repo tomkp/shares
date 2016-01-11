@@ -49,6 +49,8 @@ var Application = React.createClass({
         //const { symbols } = props ? props.params : this.props.params;
         //console.info('symbols', symbols);
         this.fetch();
+
+        //fetchHistorical(['TSCO.L']).then((res)=> { console.info(res) })
     },
 
     render() {
