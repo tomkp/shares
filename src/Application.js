@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom'
-import { Router, Route, Link } from 'react-router'
+import { Router, Route, Link, IndexRoute } from 'react-router'
 
 import '../less/Application.less';
 
@@ -45,17 +45,18 @@ var Application = React.createClass({
 
     componentDidMount() {
         console.info('Application.componentDidMount', this.props);
-        const symbolsX = this.props.location.query.symbols;
-        //console.info('', symbolsX);
+        //const { symbols } = props ? props.params : this.props.params;
+        //console.info('symbols', symbols);
         this.fetch();
     },
 
     render() {
-        //console.info('Application.render', this.state);
+        console.info('Application.render', this);
         const quotes = this.state.quotes;
-        return (
-            <Quotes quotes={quotes} />
-        );
+        return (<div className="page"> {
+            this.props.children &&
+            React.cloneElement(this.props.children, { quotes: quotes})
+        } </div>);
      }
 });
 
@@ -63,6 +64,9 @@ var Application = React.createClass({
 
 render((
     <Router>
-        <Route path="/" component={Application} />
+        <Route path="/" component={Application} >
+            <IndexRoute component={Quotes} />
+            <Route path="/quotes" component={Quotes} />
+        </Route>
     </Router>
 ), document.getElementById('application'));
