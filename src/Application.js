@@ -4,7 +4,7 @@ import { Router, Route, Link, IndexRoute } from 'react-router'
 
 import '../less/Application.less';
 
-import Quotes from './Quotes';
+import QuotesPage from './QuotesPage';
 import Historicals from './Historicals';
 import fetchQuotes from 'yahoo-finance-quotes';
 import fetchHistorical from './FetchHistorical';
@@ -26,39 +26,11 @@ localforage
 
 var Application = React.createClass({
 
-    fetch() {
-        console.info(new Date(), 'Application.fetch');
-        fetchQuotes(symbols)
-            .then((quotes) => {
-                this.setState({quotes: quotes});
-                setTimeout(() => this.fetch(), 60000);
-            })
-            .catch((response) => {
-                console.error(response);
-            });
-    },
-
-    getInitialState() {
-      return {
-        quotes: []
-      }
-    },
-
-    componentDidMount() {
-        console.info('Application.componentDidMount', this.props);
-        //const { symbols } = props ? props.params : this.props.params;
-        //console.info('symbols', symbols);
-        this.fetch();
-
-        //fetchHistorical(['TSCO.L']).then((res)=> { console.info(res) })
-    },
-
     render() {
         console.info('Application.render', this);
-        const quotes = this.state.quotes;
         return (<div className="page"> {
             this.props.children &&
-            React.cloneElement(this.props.children, { quotes: quotes})
+            React.cloneElement(this.props.children, { symbols: symbols})
         } </div>);
      }
 });
@@ -68,8 +40,8 @@ var Application = React.createClass({
 render((
     <Router>
         <Route path="/" component={Application} >
-            <IndexRoute component={Quotes} />
-            <Route path="/quotes" component={Quotes} />
+            <IndexRoute component={QuotesPage} />
+            <Route path="/quotes" component={QuotesPage} />
             <Route path="/historicals" component={Historicals} />
         </Route>
     </Router>
