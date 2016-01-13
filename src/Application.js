@@ -12,8 +12,7 @@ import fetchHistorical from './FetchHistorical';
 import moment from 'moment';
 import localforage from 'localforage';
 
-//const symbols = ["ISF.L", "EMG.L", "LMI.L", "BRWM.L", "SSE.L", "MTC.L", "RDSA.L", "BLT.L", "TSCO.L", "MKS.L", "ULVR.L", "GSK.L", "RB.L", "JII.L", "TEM.L", "AAPL"];
-const symbols = ["ISF.L", "EMG.L", "LMI.L"];
+const symbols = ["ISF.L", "EMG.L", "LMI.L", "BRWM.L", "SSE.L", "MTC.L", "RDSA.L", "BLT.L", "TSCO.L", "MKS.L", "ULVR.L", "GSK.L", "RB.L", "JII.L", "TEM.L", "AAPL"];
 
 localforage
     .setItem('key', 'value')

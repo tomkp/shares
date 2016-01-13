@@ -3,7 +3,7 @@ import moment from 'moment';
 
 export default (symbol) => {
     //const symbolStr = symbols.map((s) => `"${s}"`).join(',');
-    const from = moment().subtract(1, 'month').format('YYYY-MM-DD');
+    const from = moment().subtract(1, 'year').format('YYYY-MM-DD');
     const to = moment().format('YYYY-MM-DD');
     return axios.get('http://query.yahooapis.com/v1/public/yql', {
         params: {
