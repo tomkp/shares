@@ -3,11 +3,14 @@ import React from 'react';
 
 export default React.createClass({
     render() {
-       const historical = this.props.historical;
+        const symbol = this.props.symbol;
+        const values = this.props.values;
        return (
             <tr className="historical">
-                <td className="symbol">{historical.Symbol}</td>
-                <td className="date">{historical.Date}</td>
+                <td className="symbol">{symbol}</td>
+                <td className="date">{values.map((x) => {
+                    return x.Close
+                })}</td>
             </tr>
         );
     }

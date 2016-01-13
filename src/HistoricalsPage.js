@@ -10,20 +10,31 @@ import fetchHistoricals from './FetchHistorical';
 export default React.createClass({
 
     fetch() {
-        console.info(new Date(), 'HistoricalsPage.fetch');
-        fetchHistoricals(this.props.symbols)
-            .then((historicals) => {
-                this.setState({historicals: historicals});
-                setTimeout(() => this.fetch(), 60000);
-            })
-            .catch((response) => {
-                console.error(response);
-            });
+        console.info(new Date(), 'HistoricalsPage.fetch', this);
+        const symbols = this.props.symbols;
+        const x = symbols.map((symbol) => {
+            return fetchHistoricals(symbol)
+                .then((historicals) => {
+                    //const values = this.state.values;
+                    //values.push({symbol: symbol, historicals: historicals});
+                    //this.setState({values: values});
+                    return {symbol: symbol, historicals: historicals};
+                })
+                .catch((response) => {
+                    console.error(response);
+                });
+        });
+        console.info('x', x);
+        //setTimeout(() => this.fetch(), 60000);
+        Promise.all(x).then((z) => {
+            console.info('z', z);
+            this.setState({values: z});
+        });
     },
 
     getInitialState() {
         return {
-            historicals: []
+            values: []
         }
     },
 
@@ -34,6 +45,6 @@ export default React.createClass({
 
     render() {
         console.info('HistoricalsPage.render', this);
-        return <Historicals historicals={this.state.historicals} />;
+        return <Historicals values={this.state.values} />;
     }
 });

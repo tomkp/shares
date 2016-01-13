@@ -2,12 +2,12 @@ import React from 'react';
 
 import Historical from './Historical';
 
-export default ({ historicals }) => (
+export default ({ values }) => (
     <table className="historicals">
         <tbody>
         {
-            historicals
-                .map((historical) => <Historical historical={historical} key={historical.Symbol + historical.Date} />)
+            values
+                .map((value) => <Historical values={value.historicals} symbol={value.symbol} key={value.symbol} />)
         }
         </tbody>
     </table>
