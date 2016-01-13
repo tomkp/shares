@@ -1,15 +1,10 @@
 import React from 'react';
 
 import Quote from './Quote';
-import percent from './Percent';
-
 import Quotes from './Quotes';
-import Historicals from './Historicals';
-import fetchQuotes from 'yahoo-finance-quotes';
-import fetchHistorical from './FetchHistorical';
 
-import moment from 'moment';
-import localforage from 'localforage';
+import percent from './Percent';
+import fetchQuotes from 'yahoo-finance-quotes';
 
 export default React.createClass({
 

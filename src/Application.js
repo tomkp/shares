@@ -5,7 +5,7 @@ import { Router, Route, Link, IndexRoute } from 'react-router'
 import '../less/Application.less';
 
 import QuotesPage from './QuotesPage';
-import Historicals from './Historicals';
+import HistoricalsPage from './HistoricalsPage';
 import fetchQuotes from 'yahoo-finance-quotes';
 import fetchHistorical from './FetchHistorical';
 
@@ -42,7 +42,7 @@ render((
         <Route path="/" component={Application} >
             <IndexRoute component={QuotesPage} />
             <Route path="/quotes" component={QuotesPage} />
-            <Route path="/historicals" component={Historicals} />
+            <Route path="/historicals" component={HistoricalsPage} />
         </Route>
     </Router>
 ), document.getElementById('application'));
