@@ -16,8 +16,8 @@ function spark(
                 count = i = data.length,                // set the iterator and count to length of the data array
                 h = canvas.height = canvas.offsetHeight,              // ensure we have the height adjusted for the size of the canvas
                 w = canvas.width,                              // get the canvas width, COMPROMISE: w = canvas.width = canvas.offsetWidth;
-                //barWidth = w / ~-count                  // calculate the width of the bar chart
-                barWidth = 1                  // calculate the width of the bar chart
+                barWidth = w / ~-count                  // calculate the width of the bar chart
+                //barWidth = 1                  // calculate the width of the bar chart
             ;
             i--                                     // loop thru the data in reverse, until i === 0
             ;
