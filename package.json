@@ -29,11 +29,13 @@
     "less-loader": "^2.2.2",
     "react-addons-test-utils": "^0.14.6",
     "style-loader": "^0.13.0",
+    "surge": "^0.17.7",
     "watchy": "^0.6.5",
     "webpack": "^1.12.11"
   },
   "scripts": {
-    "pack": "webpack --progress --colors --watch",
+    "build": "webpack --progress --colors",
+    "build:watch": "webpack --progress --colors --watch",
     "electron": "electron .",
     "deploy": "webpack && surge app statae.com"
   },
