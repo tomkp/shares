@@ -2,6 +2,7 @@ import React from 'react';
 
 import fraction from './Colors';
 import percent from './Percent';
+import Chart from './Chart';
 
 export default React.createClass({
     render() {
@@ -16,7 +17,11 @@ export default React.createClass({
 
         return (
             <tr className="quote" style={style}>
+                <td>
+                    <Chart latest={quote.LastTradePriceOnly} hi52={quote.YearHigh} lo52={quote.YearLow}/>
+                </td>
                 <td className="name-symbol">
+
                     <a href={`https://finance.yahoo.com/q?s=${quote.symbol}`} className="name">{quote.Name}</a>
                     <div className="symbol">{quote.Symbol}</div>
                 </td>

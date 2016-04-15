@@ -81,12 +81,19 @@ th {
   font-weight: normal;
   font-size: 3vmin;
   padding: .5rem 0;
+
   text-align: center;
 }
 
 td, th {
   vertical-align: top;
+  //padding: .5rem 0;
   padding-left: 1rem;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
   &:last-child {
     padding-right: 1rem;
   }
@@ -97,7 +104,10 @@ td {
 }
 
 .name-symbol {
-  min-width: 40%;
+  max-width: 44vmin;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .name {
@@ -120,5 +130,6 @@ td {
 
 
 canvas {
-  height: 1em;
+  height: 6vmin;
+  width: 2vmin;
 }
