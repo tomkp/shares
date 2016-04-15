@@ -39,6 +39,6 @@ var config = {
     }
 };
 
-config.target = webpackTargetElectronRenderer(config);
+//config.target = webpackTargetElectronRenderer(config);
 
 module.exports = config;
