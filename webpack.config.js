@@ -1,5 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
+const webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
+
 
 var config = {
     entry: [
