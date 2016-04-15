@@ -4,7 +4,6 @@ import React from "react";
 export default React.createClass({
 
     componentDidMount() {
-        console.log(`Chart.onComponentDidMount ${this.props}`);
         if (this.props.latest && this.props.hi52 && this.props.lo52) {
             const value = (this.props.latest - this.props.lo52) / (this.props.hi52 - this.props.lo52);
             const canvas = this.refs['canvas'];
@@ -19,7 +18,6 @@ export default React.createClass({
     },
 
     render() {
-        console.log(`Chart.render`);
         return (
             <canvas ref="canvas"/>
         );
