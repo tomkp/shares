@@ -9,7 +9,7 @@ import fetchQuotes from 'yahoo-finance-quotes';
 export default React.createClass({
 
     fetch() {
-        console.info(new Date(), 'QuotesPage.fetch');
+        //console.info(new Date(), 'QuotesPage.fetch');
         fetchQuotes(this.props.symbols)
             .then((quotes) => {
                 this.setState({quotes: quotes});
@@ -27,12 +27,12 @@ export default React.createClass({
     },
 
     componentDidMount() {
-        console.info('QuotesPage.componentDidMount', this.props);
+        //console.info('QuotesPage.componentDidMount', this.props);
         this.fetch();
     },
 
     render() {
-        console.info('QuotesPage.render', this);
+        //console.info('QuotesPage.render', this);
         return <Quotes quotes={this.state.quotes} />;
     }
 });

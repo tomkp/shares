@@ -27,7 +27,7 @@ const symbols = [
 
 
 const Application = ({children}) => {
-    console.info('Application.render', this);
+    //console.info('Application.render', this);
     return (<div className="page"> { children && React.cloneElement(children, {symbols: symbols})} </div>);
 };
 
