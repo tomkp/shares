@@ -17,7 +17,7 @@ export default React.createClass({
         return (
             <tr className="quote" style={style}>
                 <td className="name-symbol">
-                    <div className="name">{quote.Name}</div>
+                    <a href={`https://finance.yahoo.com/q?s=${quote.symbol}`} className="name">{quote.Name}</a>
                     <div className="symbol">{quote.Symbol}</div>
                 </td>
                 <td className="latest">{Number(quote.LastTradePriceOnly).toFixed(2)}</td>
