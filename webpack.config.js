@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 
-module.exports = {
+var config = {
     entry: [
         'babel-polyfill',
         './app/src/Application.js'
@@ -36,3 +36,7 @@ module.exports = {
         tls: 'empty'
     }
 };
+
+config.target = webpackTargetElectronRenderer(config);
+
+module.exports = config;
