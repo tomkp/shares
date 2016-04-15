@@ -46,4 +46,4 @@ render((
             <Route path="/historicals" component={HistoricalsPage} />
         </Route>
     </Router>
-), document.getElementById('application'));
+), document.getElementById('root'));
