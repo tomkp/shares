@@ -12,7 +12,7 @@ export default React.createClass({
     fetch() {
         console.info(new Date(), 'HistoricalsPage.fetch', this);
         const symbols = this.props.symbols;
-        //const symbols = ['EMG.L'];
+        //const symbols = ['GB00BLT1YM08.L'];
         const x = symbols.map((symbol) => {
             return fetchHistoricals(symbol)
                 .then((historicals) => {

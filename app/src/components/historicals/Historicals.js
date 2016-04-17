@@ -2,6 +2,8 @@ import React from 'react';
 
 import Historical from './Historical';
 
+import './historicals.scss';
+
 export default ({ values }) => (
     <table className="historicals">
         <tbody>

@@ -1,0 +1,15 @@
+@import "../constants.scss";
+
+.historical {
+
+  font-size: $vmin;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  canvas {
+    height: 6vmin;
+    width: 10vmin;
+  }
+}

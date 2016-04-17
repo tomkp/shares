@@ -2,6 +2,7 @@ import axios from 'axios';
 import moment from 'moment';
 
 export default (symbol) => {
+    console.log(`Fetch historical data for '${symbol}'`);
     //const symbolStr = symbols.map((s) => `"${s}"`).join(',');
     const from = moment().subtract(1, 'year').format('YYYY-MM-DD');
     const to = moment().format('YYYY-MM-DD');
@@ -12,7 +13,8 @@ export default (symbol) => {
             env: 'store://datatables.org/alltableswithkeys'
         }
     }).then((response) => {
-        console.info('response:', response);
+        console.log(`Historical data for '${symbol}': '${JSON.stringify(response)}'`);
         return response.data.query.results.quote;
-    });
+    })
+        ;
 }

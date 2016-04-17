@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './historical.scss';
 
 function spark(
     canvas,                                             // canvas canvas element
