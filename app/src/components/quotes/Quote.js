@@ -1,8 +1,8 @@
 import React from 'react';
 
-import fraction from './Colors';
-import percent from './Percent';
-import Chart from './Chart';
+import fraction from './../Colors';
+import percent from './../Percent';
+import Chart from './../chart/Chart';
 
 export default React.createClass({
     render() {

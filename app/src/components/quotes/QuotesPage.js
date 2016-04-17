@@ -3,7 +3,7 @@ import React from 'react';
 import Quote from './Quote';
 import Quotes from './Quotes';
 
-import percent from './Percent';
+import percent from './../Percent';
 import fetchQuotes from 'yahoo-finance-quotes';
 
 export default React.createClass({

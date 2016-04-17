@@ -1,8 +1,8 @@
 import React from "react";
 import {render} from "react-dom";
 import {Router, Route, IndexRoute} from "react-router";
-import QuotesPage from "./QuotesPage";
-import HistoricalsPage from "./HistoricalsPage";
+import QuotesPage from "./quotes/QuotesPage";
+import HistoricalsPage from "./historicals/HistoricalsPage";
 //import './styles.scss';
 import "./application.scss";
 

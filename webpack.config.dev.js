@@ -8,7 +8,7 @@ var config = {
     debug: true,
     entry: [
         'webpack-hot-middleware/client',
-        './app/src/Application.js'
+        './app/src/components/Application.js'
     ],
     output: {
         path: path.join(__dirname, 'dist'),

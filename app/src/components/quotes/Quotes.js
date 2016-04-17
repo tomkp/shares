@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Quote from './Quote';
-import percent from './Percent';
+import percent from './../Percent';
 
 
 export default ({ quotes }) => (
