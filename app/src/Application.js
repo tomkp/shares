@@ -3,7 +3,8 @@ import {render} from "react-dom";
 import {Router, Route, IndexRoute} from "react-router";
 import QuotesPage from "./QuotesPage";
 import HistoricalsPage from "./HistoricalsPage";
-import "../less/Application.less";
+//import './styles.scss';
+import "./application.scss";
 
 
 const symbols = [
