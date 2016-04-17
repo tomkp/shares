@@ -3,6 +3,7 @@ import React from 'react';
 import fraction from './../Colors';
 import percent from './../Percent';
 import Chart from './../chart/Chart';
+import "./quote.scss";
 
 export default React.createClass({
     render() {

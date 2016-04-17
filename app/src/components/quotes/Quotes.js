@@ -2,7 +2,7 @@ import React from 'react';
 
 import Quote from './Quote';
 import percent from './../Percent';
-
+import "./quotes.scss";
 
 export default ({ quotes }) => (
     <table className="quotes">

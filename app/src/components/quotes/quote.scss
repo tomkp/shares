@@ -1,0 +1,41 @@
+@import "../constants.scss";
+
+.quote {
+
+  font-size: $vmin;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .name-symbol {
+    max-width: 44vmin;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .symbol {
+    margin-top: .25rem;
+    font-size: 1.5vmin;
+    font-style: italic;
+  }
+
+  .change,
+  .latest,
+  .percent-change {
+    text-align: right;
+  }
+
+
+  canvas {
+    height: 6vmin;
+    width: 2vmin;
+  }
+}
