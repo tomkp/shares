@@ -23,7 +23,7 @@
 
   td, th {
     vertical-align: top;
-    padding-left: 1rem;
+    padding-left: .5rem;
 
     overflow: hidden;
     white-space: nowrap;
@@ -31,7 +31,7 @@
     text-align: right;
 
     &:last-child {
-      padding-right: 1rem;
+      padding-right: .5rem;
     }
   }
 
