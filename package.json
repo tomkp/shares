@@ -60,7 +60,7 @@
     "clean:osx": "rimraf ./build/Shares-darwin-x64",
     "clean:win": "rimraf ./build/Shares-win32-x64",
     "electron:dev": "webpack --config webpack.config.dev.js && electron .",
-    "deploy": "webpack && surge app statae.com",
+    "deploy": "npm run prod && surge app statae.com",
     "build:osx": "npm run clean:osx && cross-env NODE_ENV=development electron-packager ./app --overwrite --out='build' --icon='tomkp.icns' --platform=darwin --appname='Shares' --arch=x64",
     "build:win": "npm run clean:win && cross-env NODE_ENV=development electron-packager . --overwrite --out='build' --platform=win32 --appname='Shares' --arch=x64",
     "build": "npm run build:osx && npm run build:win",
