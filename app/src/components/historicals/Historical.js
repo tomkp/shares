@@ -9,18 +9,21 @@ function spark(
     console.info('data', data, data.length);
 
         var context = canvas.getContext('2d');             // get the 2d context
-        context.fillStyle = 'rgba(255, 255, 255, 0.5)';
+        context.fillStyle = "rgba(32, 45, 21, 0.3)";
 
+
+    var
+        i,                                      // iterator
+        count = i = data.length,                // set the iterator and count to length of the data array
+        h = canvas.height = canvas.offsetHeight,              // ensure we have the height adjusted for the size of the canvas
+        w = canvas.width = canvas.offsetWidth,                              // get the canvas width, COMPROMISE: w = canvas.width = canvas.offsetWidth;
+        barWidth = w / count                  // calculate the width of the bar chart
+    //barWidth = 1                          // calculate the width of the bar chart
+    ;
         for (
-            var
-                i,                                      // iterator
-                count = i = data.length,                // set the iterator and count to length of the data array
-                h = canvas.height = canvas.offsetHeight,              // ensure we have the height adjusted for the size of the canvas
-                w = canvas.width,                              // get the canvas width, COMPROMISE: w = canvas.width = canvas.offsetWidth;
-                barWidth = w / ~-count                  // calculate the width of the bar chart
-                //barWidth = 1                  // calculate the width of the bar chart
+
             ;
-            i--                                     // loop thru the data in reverse, until i === 0
+            i--                                         // loop thru the data in reverse, until i === 0
             ;
             context.fillRect(                       // fill a rectangle...
                 i * barWidth,                       // x position
@@ -42,7 +45,7 @@ export default React.createClass({
 
     componentDidMount() {
         console.info('Historical.componentDidMount', this);
-        const x = this.refs.canvass;
+        const x = this.refs.canvas;
         const values = this.props.values;
         const max = values.reduce((p,c) => {
             return this.price(p) > this.price(c) ? p : c;
@@ -64,7 +67,7 @@ export default React.createClass({
             <tr className="historical">
                 <td className="symbol">{symbol}</td>
                 <td>
-                    <canvas ref="canvass" width="400" />
+                    <canvas ref="canvas" width={values.length} />
                 </td>
             </tr>
         );
