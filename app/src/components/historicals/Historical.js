@@ -1,76 +1,34 @@
-import React from 'react';
-
-import './historical.scss';
-
-function spark(
-    canvas,                                             // canvas canvas element
-    data                                                // an array of values from 0 to 1
-) {
-    console.info('data', data, data.length);
-
-        var context = canvas.getContext('2d');             // get the 2d context
-        context.fillStyle = "rgba(32, 45, 21, 0.3)";
+import React from "react";
+import Graph from "../graph/Graph";
+import "./historical.scss";
 
 
-    var
-        i,                                      // iterator
-        count = i = data.length,                // set the iterator and count to length of the data array
-        h = canvas.height = canvas.offsetHeight,              // ensure we have the height adjusted for the size of the canvas
-        w = canvas.width = canvas.offsetWidth,                              // get the canvas width, COMPROMISE: w = canvas.width = canvas.offsetWidth;
-        barWidth = w / count                  // calculate the width of the bar chart
-    //barWidth = 1                          // calculate the width of the bar chart
-    ;
-        for (
+export default ({symbol, values}) => {
 
-            ;
-            i--                                         // loop thru the data in reverse, until i === 0
-            ;
-            context.fillRect(                       // fill a rectangle...
-                i * barWidth,                       // x position
-                h,                                  // y position
-                //barWidth - 1,                       // width of bar (subtract 1 to separate bars)
-                barWidth,
-                h * -data[i]                        // height of bar
-            )
-        );
+    const price = (x) => {
+        return x['Close'];
+    };
+
+    const min = values.reduce((p, c) => {
+        return price(p) < price(c) ? p : c;
+    });
+
+    const max = values.reduce((p, c) => {
+        return price(p) > price(c) ? p : c;
+    });
+    const data = values.map((x) => {
+        var z = price(x) - price(min);
+        var gap = price(max) - price(min);
+        return z / gap;
+    });
+
+    return (
+        <tr className="historical">
+            <td className="symbol">{symbol}</td>
+            <td>
+                <Graph data={data}/>
+            </td>
+        </tr>
+    );
 }
 
-
-export default React.createClass({
-
-
-    price(x) {
-      return x['Close'];
-    },
-
-    componentDidMount() {
-        console.info('Historical.componentDidMount', this);
-        const x = this.refs.canvas;
-        const values = this.props.values;
-        const max = values.reduce((p,c) => {
-            return this.price(p) > this.price(c) ? p : c;
-        });
-        const min = values.reduce((p,c) => {
-            return this.price(p) < this.price(c) ? p : c;
-        });
-        spark(x, values.map((x) => {
-            var z = this.price(x) - this.price(min);
-            var gap = this.price(max) - this.price(min);
-            return z / gap;
-        }));
-    },
-
-    render() {
-        const symbol = this.props.symbol;
-        const values = this.props.values;
-           return (
-            <tr className="historical">
-                <td className="symbol">{symbol}</td>
-                <td>
-                    <canvas ref="canvas" width={values.length} />
-                </td>
-            </tr>
-        );
-    }
-
-});

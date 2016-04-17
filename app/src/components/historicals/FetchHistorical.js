@@ -13,8 +13,8 @@ export default (symbol) => {
             env: 'store://datatables.org/alltableswithkeys'
         }
     }).then((response) => {
-        console.log(`Historical data for '${symbol}': '${JSON.stringify(response)}'`);
+        //console.log(`Historical data for '${symbol}': '${JSON.stringify(response)}'`);
         return response.data.query.results.quote;
     })
-        ;
+    ;
 }

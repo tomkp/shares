@@ -1,7 +1,7 @@
 import React from "react";
 import fraction from "./../Colors";
 import percent from "./../Percent";
-import Chart from "./../chart/Chart";
+import Chart from "./../battery/Battery";
 import "./quote.scss";
 
 export default ({quote}) => {
