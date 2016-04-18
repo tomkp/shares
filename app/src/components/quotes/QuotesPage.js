@@ -21,14 +21,14 @@ export default React.createClass({
     },
 
     fetchHistoricals() {
-        console.info(new Date(), 'QuotesPage.fetchHistoricals');
+        //console.info(new Date(), 'QuotesPage.fetchHistoricals');
         const symbols = this.props.symbols;
         //const symbols = ['GB00BLT1YM08.L'];
         symbols.map((symbol) => {
             return fetchHistoricals(symbol)
                 .then((historicalData) => {
                     //return {symbol: symbol, historicals: historicals};
-                    console.info(`${new Date()} QuotesPage.fetchHistorical for '${symbol}'`);
+                    //console.info(`${new Date()} QuotesPage.fetchHistorical for '${symbol}'`);
                     let historicals = this.state.historicals;
                     if (!historicals) historicals = {};
                     historicals[symbol] = historicalData;

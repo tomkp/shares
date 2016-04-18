@@ -8,7 +8,7 @@ import "./quote.scss";
 
 export default ({quote, historicals}) => {
 
-    console.log(`Quote '${quote}' '${historicals}`);
+    //console.log(`Quote '${quote}' '${historicals}`);
 
     const percentage = percent(quote.PercentChange);
     let col = '#eee';
