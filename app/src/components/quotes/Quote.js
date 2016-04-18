@@ -2,9 +2,13 @@ import React from "react";
 import fraction from "./../Colors";
 import percent from "./../Percent";
 import Chart from "./../battery/Battery";
+import HistoricalGraph from "../historicals/HistoricalGraph";
+
 import "./quote.scss";
 
-export default ({quote}) => {
+export default ({quote, historicals}) => {
+
+    console.log(`Quote '${quote}' '${historicals}`);
 
     const percentage = percent(quote.PercentChange);
     let col = '#eee';
@@ -23,6 +27,7 @@ export default ({quote}) => {
 
                 <a href={`https://finance.yahoo.com/q?s=${quote.symbol}`} className="name">{quote.Name}</a>
                 <div className="symbol">{quote.Symbol}</div>
+                {historicals?<HistoricalGraph values={historicals} />:''}
             </td>
             <td className="latest">{Number(quote.LastTradePriceOnly).toFixed(2)}</td>
             <td className="change">{Number(quote.Change).toFixed(2)}</td>

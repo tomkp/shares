@@ -35,8 +35,15 @@
   }
 
 
-  canvas {
+  .battery {
     height: 6vmin;
     width: 2vmin;
+  }
+
+  .graph {
+    //height: 6vmin;
+    //width: 10vmin;
+    width: 10rem;
+    height: 1rem;
   }
 }

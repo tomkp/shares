@@ -4,7 +4,7 @@ import Quote from './Quote';
 import percent from './../Percent';
 import "./quotes.scss";
 
-export default ({ quotes }) => (
+export default ({ quotes, historicals }) => (
 
     <table className="quotes">
         <thead>
@@ -21,7 +21,7 @@ export default ({ quotes }) => (
             quotes
                 .filter((quote) => quote.PercentChange)
                 .sort((a, b)=> percent(b.PercentChange) - percent(a.PercentChange))
-                .map((quote) => <Quote quote={quote} key={quote.Symbol} />)
+                .map((quote) => <Quote quote={quote} historicals={historicals[quote.Symbol]} key={quote.Symbol} />)
         }
         </tbody>
     </table>

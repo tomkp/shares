@@ -1,8 +1,5 @@
 import React from 'react';
 
-import Historical from './Historical';
-import percent from './../Percent';
-
 import Historicals from './Historicals';
 import fetchHistoricals from './FetchHistorical';
 
