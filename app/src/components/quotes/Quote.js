@@ -20,11 +20,7 @@ export default ({quote, historicals}) => {
 
     return (
         <tr className="quote" style={style}>
-            <td>
-                <Chart latest={quote.LastTradePriceOnly} hi52={quote.YearHigh} lo52={quote.YearLow}/>
-            </td>
             <td className="name-symbol">
-
                 <a href={`https://finance.yahoo.com/q?s=${quote.symbol}`} className="name">{quote.Name}</a>
                 <div className="symbol">{quote.Symbol}</div>
                 {historicals?<HistoricalGraph values={historicals} />:''}
@@ -35,3 +31,9 @@ export default ({quote, historicals}) => {
         </tr>
     );
 }
+
+/*            
+<td>
+ <Chart latest={quote.LastTradePriceOnly} hi52={quote.YearHigh} lo52={quote.YearLow}/>
+ </td>
+*/

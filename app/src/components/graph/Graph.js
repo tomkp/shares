@@ -12,7 +12,7 @@ export default React.createClass({
         const y = canvas.height;
         const barWidth = (canvas.width) / count;
 
-        context.fillStyle = 'rgba(0, 0, 0, 0.1)';
+        context.fillStyle = 'rgba(0, 0, 0, 0.2)';
 
         for (var i = data.length - 1; i >= 0; i--) {
             let w = barWidth;
