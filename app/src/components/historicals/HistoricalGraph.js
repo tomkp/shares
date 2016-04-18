@@ -5,7 +5,7 @@ import "./historical.scss";
 
 export default ({values}) => {
 
-    console.log(`HistoricalGraph '${values}'`);
+    //console.log(`HistoricalGraph '${values}'`);
 
     const price = (x) => {
         return x['Close'];
