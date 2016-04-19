@@ -27,10 +27,8 @@ export default React.createClass({
         symbols.map((symbol) => {
             return fetchHistoricals(symbol)
                 .then((historicalData) => {
-                    //return {symbol: symbol, historicals: historicals};
                     //console.info(`${new Date()} QuotesPage.fetchHistorical for '${symbol}'`);
                     let historicals = this.state.historicals;
-                    if (!historicals) historicals = {};
                     historicals[symbol] = historicalData;
                     this.setState({historicals: historicals});
                 })
@@ -42,7 +40,8 @@ export default React.createClass({
 
     getInitialState() {
         return {
-            quotes: []
+            quotes: [],
+            historicals: {}
         }
     },
 
