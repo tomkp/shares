@@ -2,12 +2,10 @@ import React from "react";
 import {render} from "react-dom";
 import {Router, Route, IndexRoute} from "react-router";
 import QuotesPage from "./quotes/QuotesPage";
-import HistoricalsPage from "./historicals/HistoricalsPage";
-//import './styles.scss';
 import "./application.scss";
 
 
-const symbols = [
+const defaultSymbols = [
     "GB00B3X7QG63.L",
     "VMID.L",
     "GB00BLT1YM08.L",
@@ -27,8 +25,12 @@ const symbols = [
 ];
 
 
-const Application = ({children}) => {
-    //console.info('Application.render', this);
+const Application = ({children, params}) => {
+    console.info('Application.render', params);
+    let symbols = defaultSymbols;
+    if (params.symbols) {
+        symbols = params.symbols.split(',');
+    }
     return (<div className="page"> { children && React.cloneElement(children, {symbols: symbols})} </div>);
 };
 
@@ -37,8 +39,8 @@ render((
     <Router>
         <Route path="/" component={Application}>
             <IndexRoute component={QuotesPage}/>
-            <Route path="/quotes" component={QuotesPage}/>
-            <Route path="/historicals" component={HistoricalsPage}/>
+            <Route path="/:symbols" component={QuotesPage}/>
         </Route>
     </Router>
 ), document.getElementById('root'));
+
