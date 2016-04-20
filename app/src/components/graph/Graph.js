@@ -5,7 +5,7 @@ export default React.createClass({
 
     componentDidMount() {
 
-        const data = this.props.data;
+        const data = this.props.data.reverse();
         const canvas = this.refs['canvas'];
         const context = canvas.getContext('2d');
         const count = data.length;
@@ -14,7 +14,7 @@ export default React.createClass({
 
         context.fillStyle = 'rgba(0, 0, 0, 0.2)';
 
-        for (var i = data.length - 1; i >= 0; i--) {
+        for (var i = 0; i < data.length; i++) {
             let w = barWidth;
             let x = i * w;
             let h = y * -data[i];

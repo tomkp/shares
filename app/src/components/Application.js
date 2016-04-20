@@ -1,6 +1,6 @@
 import React from "react";
 import {render} from "react-dom";
-import {Router, Route, IndexRoute} from "react-router";
+import {Router, Route, IndexRoute, browserHistory} from "react-router";
 import QuotesPage from "./quotes/QuotesPage";
 import "./application.scss";
 
@@ -36,7 +36,7 @@ const Application = ({children, params}) => {
 
 
 render((
-    <Router>
+    <Router history={browserHistory}>
         <Route path="/" component={Application}>
             <IndexRoute component={QuotesPage}/>
             <Route path="/:symbols" component={QuotesPage}/>
