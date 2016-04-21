@@ -10,18 +10,18 @@ const defaultSymbols = [
     "VMID.L",
     "GB00BLT1YM08.L",
     "GB00B7LWFW05.L",
-    // "VEVE.L",
-    // "VVAL.L",
     "GB00B59G4Q73.L",
-    "ISF.L",
-    //"EMG.L",
-    //"LMI.L",
     "RDSA.L",
     "TSCO.L",
     "MKS.L",
     "ULVR.L",
     "GSK.L",
-    "RB.L"
+    //"RB.L",
+    //"ISF.L",
+    // "VEVE.L",
+    // "VVAL.L",
+    //"EMG.L",
+    //"LMI.L",
 ];
 
 
