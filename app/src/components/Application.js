@@ -1,27 +1,27 @@
-import React from "react";
-import {render} from "react-dom";
-import {Router, Route, IndexRoute, browserHistory} from "react-router";
-import QuotesPage from "./quotes/QuotesPage";
-import "./application.scss";
+import React from 'react';
+import {render} from 'react-dom';
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import QuotesPage from './quotes/QuotesPage';
+import './application.scss';
 
 
 const defaultSymbols = [
-    "GB00B3X7QG63.L",
-    "VMID.L",
-    "GB00BLT1YM08.L",
-    "GB00B7LWFW05.L",
-    "GB00B59G4Q73.L",
-    "RDSA.L",
-    "TSCO.L",
-    "MKS.L",
-    "ULVR.L",
-    "GSK.L",
-    //"RB.L",
-    //"ISF.L",
-    // "VEVE.L",
-    // "VVAL.L",
-    //"EMG.L",
-    //"LMI.L",
+    'GB00B3X7QG63.L',
+    'VMID.L',
+    'GB00BLT1YM08.L',
+    'GB00B7LWFW05.L',
+    'GB00B59G4Q73.L',
+    'RDSA.L',
+    'TSCO.L',
+    'MKS.L',
+    'ULVR.L',
+    'GSK.L',
+    //'RB.L',
+    //'ISF.L',
+    // 'VEVE.L',
+    // 'VVAL.L',
+    //'EMG.L',
+    //'LMI.L',
 ];
 
 
