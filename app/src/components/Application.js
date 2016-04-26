@@ -16,6 +16,7 @@ const defaultSymbols = [
     'MKS.L',
     'ULVR.L',
     'GSK.L',
+    'VFINX',
     //'RB.L',
     //'ISF.L',
     // 'VEVE.L',
