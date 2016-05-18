@@ -46,4 +46,18 @@
     height: 1.5rem;
     margin-top: .5rem;
   }
+
+  @media screen and (orientation:portrait) {
+  }
+
+  @media screen and (orientation:landscape) {
+    .symbol {
+      display: inline-block;
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+    .graph {
+      display: block;
+    }
+  }
 }
