@@ -14,10 +14,10 @@ export default React.createClass({
 
         context.fillStyle = 'rgba(0, 0, 0, 0.2)';
 
-        for (var i = 0; i < data.length; i++) {
-            let w = barWidth;
-            let x = i * w;
-            let h = y * -data[i];
+        for (let i = 0; i < data.length; i++) {
+            const w = barWidth;
+            const x = i * w;
+            const h = y * -data[i];
             //console.log(`${i} ${x}, ${y}, ${w}, ${h}`);
             context.fillRect(Math.round(x), Math.round(y), Math.round(w), Math.round(h))
         }
