@@ -18,9 +18,9 @@ export default ({ quotes, historicals }) => (
         <tbody>
         {
             quotes
-                .filter((quote) => quote.PercentChange)
+                .filter(quote => quote.PercentChange)
                 .sort((a, b)=> percent(b.PercentChange) - percent(a.PercentChange))
-                .map((quote) => <Quote quote={quote} historicals={historicals[quote.Symbol]} key={quote.Symbol} />)
+                .map(quote => <Quote quote={quote} historicals={historicals[quote.Symbol]} key={quote.Symbol} />)
         }
         </tbody>
     </table>
